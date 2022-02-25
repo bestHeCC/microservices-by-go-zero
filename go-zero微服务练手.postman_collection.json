@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "6edbc85f-0781-4219-9849-e1147de08966",
+		"name": "go-zero微服务练手",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "商品服务",
+			"item": [
+				{
+					"name": "添加商品",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"测试商品\",\r\n    \"desc\": \"\",\r\n    \"stock\": 1000,\r\n    \"amount\": 1,\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productUrl}}/api/product/create",
+							"host": [
+								"{{productUrl}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "商品详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productUrl}}/api/product/detail",
+							"host": [
+								"{{productUrl}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "编辑商品",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"编辑商品名称\",\r\n    \"desc\": \"\",\r\n    \"stock\": 1000,\r\n    \"amount\": 1,\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productUrl}}/api/product/update",
+							"host": [
+								"{{productUrl}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除商品",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productUrl}}/api/product/remove",
+							"host": [
+								"{{productUrl}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用户服务",
+			"item": [
+				{
+					"name": "注册",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"hcc\",\r\n    \"gender\": 1,\r\n    \"mobile\": \"15396227875\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/api/user/register",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登录",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// 自动获取返回的token并设为环境变量值\r",
+									"var response = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"token\", response.accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\": \"15396227875\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/api/user/login",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询用户信息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"hcc\",\r\n    \"gender\": 1,\r\n    \"mobile\": \"15396227875\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{userUrl}}/api/user/userinfo",
+							"host": [
+								"{{userUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"userinfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
