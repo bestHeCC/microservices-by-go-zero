@@ -8,14 +8,14 @@
                                                                                               
 ```
 
-## 写在开头  
+### 写在开头  
 感谢go-zero作者万老师提供的 `go-zero` 入门学习教程的示例代码  
 详细教程:[go-zero实战：让微服务Go起来](https://juejin.cn/post/7036011047391592485)。  
 
 ## 项目说明
 go-zero配合docker环境快速搭建微服务架构的商城系统  
 此仓库为具体实现代码  
-docker环境部署文件可以[参考此处](https://gitee.com/bestHeCC/microservices-docker)。
+docker环境部署文件可以[参考此处](https://gitee.com/bestHeCC/microservices.docker)。
 
 ## Release Notes
 
