@@ -253,6 +253,181 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "订单服务",
+			"item": [
+				{
+					"name": "生成订单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uid\": 3,\r\n    \"pid\": 1,\r\n    \"amount\": 100,\r\n    \"status\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{orderUrl}}/api/order/create",
+							"host": [
+								"{{orderUrl}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新订单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"uid\": 3,\r\n    \"pid\": 1,\r\n    \"amount\": 200,\r\n    \"status\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{orderUrl}}/api/order/update",
+							"host": [
+								"{{orderUrl}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除订单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{orderUrl}}/api/order/remove",
+							"host": [
+								"{{orderUrl}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "订单详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{orderUrl}}/api/order/detail",
+							"host": [
+								"{{orderUrl}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "订单列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uid\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{orderUrl}}/api/order/list",
+							"host": [
+								"{{orderUrl}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
