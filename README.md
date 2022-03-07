@@ -1,4 +1,4 @@
-# 微服务实践 ![Version](https://img.shields.io/badge/version-1.2.0-green.svg)
+# 微服务实践 ![Version](https://img.shields.io/badge/version-1.3.0-green.svg)
 ```
               _                                            _                             __   
    ____ ___  (_)_____________        ________  ______   __(_)_______     _________  ____/ /__ 
@@ -44,4 +44,13 @@ v1.2.0 (2022-02-28)
 cd mall/service/order/rpc && go run order.go -f etc/order.yaml
 * 启动 order api 服务
 cd mall/service/order/api && go run order.go -f etc/order.yaml
+~~~
+
+~~~
+v1.3.0 (2022-03-07)
+* 实现支付服务
+* 启动 pay rpc 服务
+cd mall/service/pay/rpc && go run pay.go -f etc/pay.yaml
+* 启动 pay api 服务
+cd mall/service/pay/api && go run pay.go -f etc/pay.yaml
 ~~~
