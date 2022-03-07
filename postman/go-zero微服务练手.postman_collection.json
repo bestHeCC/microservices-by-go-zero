@@ -428,6 +428,113 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "支付服务",
+			"item": [
+				{
+					"name": "创建支付",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uid\": 3,\r\n    \"oid\": 2,\r\n    \"amount\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{payUrl}}/api/pay/create",
+							"host": [
+								"{{payUrl}}"
+							],
+							"path": [
+								"api",
+								"pay",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "支付详情",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{payUrl}}/api/pay/detail",
+							"host": [
+								"{{payUrl}}"
+							],
+							"path": [
+								"api",
+								"pay",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "支付回调",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"uid\": 3,\r\n    \"oid\": 2,\r\n    \"amount\": 100,\r\n    \"source\": 1,\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{payUrl}}/api/pay/callback",
+							"host": [
+								"{{payUrl}}"
+							],
+							"path": [
+								"api",
+								"pay",
+								"callback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
