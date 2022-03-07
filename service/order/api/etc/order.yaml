@@ -15,6 +15,8 @@ Auth:
   AccessExpire: 86400
 
 OrderRpc:
+  App: orderapi                         # App 标识
+  Token: ORVDPUvqaVO4fQgPCSFOCbDDlvr7s  # Token 值
   Etcd:
     Hosts:
       - etcd:2379

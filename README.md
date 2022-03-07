@@ -17,6 +17,10 @@ go-zero配合docker环境快速搭建微服务架构的商城系统，以下各�
 此仓库为具体实现代码  
 docker环境部署文件可以[参考此处](https://gitee.com/bestHeCC/microservices.docker)。
 
+## 服务拆分示意图
+![diagram](diagram.jpg)
+
+
 ## Release Notes
 
 ~~~
@@ -53,4 +57,20 @@ v1.3.0 (2022-03-07)
 cd mall/service/pay/rpc && go run pay.go -f etc/pay.yaml
 * 启动 pay api 服务
 cd mall/service/pay/api && go run pay.go -f etc/pay.yaml
+~~~
+
+~~~
+v1.4.0 (2022-03-07)
+* RPC服务添加auth验证
+go-zero 框架 rpc 服务的 auth 验证原理是，
+客户端访问 rpc 服务需要携带 App 标识以及 Token 值，
+rpc 服务会从指定的 Redis 服务中验证 App 标识和 Token 值是否正确。
+所以客户端的 App 标识，Token 值，是需要提前写入 Redis 中。
+
+写入redis的规则如下(以user rpc为例)：
+指定 key为rpc:auth:user，数据类型为hash
+App 标识作为 rpc 指定 key 的 hash key，Token 值作为 hash key 的值。
+
+因为order，pay rpc依赖user rpc，所以这两个rpc也要进行对应配置，否则无法通过user rpc的auth验证
+同理，order rpc依赖procut rpc，pay rpc依赖order rpc，均要进行对应配置
 ~~~

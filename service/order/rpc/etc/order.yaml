@@ -14,13 +14,24 @@ CacheRedis:
     Pass:
 
 UserRpc:
+  App: userapi                          # App 标识
+  Token: 6jKNZbEpYGeUMAifz10gOnmoty3TV  # Token 值
   Etcd:
     Hosts:
       - etcd:2379
     Key: user.rpc
 
 ProductRpc:
+  App: productapi                       # App 标识
+  Token: iNCMzryTTT8VY54HWRs9WZhgyURuY  # Token 值
   Etcd:
     Hosts:
       - etcd:2379
     Key: product.rpc
+
+Auth: true               # 是否开启 Auth 验证
+StrictControl: true      # 是否开启严格模式
+Redis: # 指定 Redis 服务
+  Key: rpc:auth:order   # 指定 Key 应为 hash 类型
+  Host: redis:6379
+  Type: node
