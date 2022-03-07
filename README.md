@@ -1,4 +1,4 @@
-# 微服务实践 ![Version](https://img.shields.io/badge/version-1.3.0-green.svg)
+# 微服务实践 ![Version](https://img.shields.io/badge/version-1.4.0-green.svg)
 ```
               _                                            _                             __   
    ____ ___  (_)_____________        ________  ______   __(_)_______     _________  ____/ /__ 
