@@ -15,7 +15,7 @@
 ## 项目说明
 go-zero配合docker环境快速搭建微服务架构的商城系统，以下各服务均需要在goland容器中启动  
 此仓库为具体实现代码  
-docker环境部署文件可以[参考此处](https://gitee.com/bestHeCC/microservices.docker)。
+docker环境部署文件可以[参考此处](https://github.com/bestHeCC/microservices-by-docker)。
 
 ## 服务拆分示意图
 ![diagram](diagram.jpg)
